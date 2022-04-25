@@ -5,7 +5,7 @@ This output is based on the input which is taken in form by user.
 
 # Requirements
 
-```pip install sklearn```
+'''pip install sklearn'''
 ```pip install flask```
 ```pip install pands```
 ```pip install numpy```
