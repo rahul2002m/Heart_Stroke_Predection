@@ -5,10 +5,24 @@ This output is based on the input which is taken in form by user.
 
 # Requirements
 
-'''pip install sklearn'''
-```pip install flask```
-```pip install pands```
-```pip install numpy```
-```pip install matplotlib```
-```pip install warnings```
-```pip install seaborn```
+```
+pip install sklearn
+```
+```
+pip install flask
+```
+```
+pip install pands
+```
+```
+pip install numpy
+```
+```
+pip install matplotlib
+```
+```
+pip install warnings
+```
+```
+pip install seaborn
+```
