@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Heart Stroke Predictor</title>
+	</head>
+	<style>
+		body{
+			margin: 0px;
+			padding: 0;
+			text-align: center;
+            display: flex;
+            align-items: center;
+			font-family: sans-serif;
+			background-image: linear-gradient(120deg,#aebae2, #609bc2);
+			min-height: 100vh;
+		}
+		
+
+.card {
+    position: relative;
+    left: 20%;
+  background-color: #fff;
+  max-width: 650px;
+  margin: 7em 8px;
+  border-radius: 8px;
+}
+
+.cover {
+  background-color: #609bc2;
+  border-radius: 8px 8px 0 0;
+  padding: 3em;
+  text-align: center;
+}
+
+.cover h1 {
+  color: rgba(255,255,255,1);
+  font-size: 2.5em;
+}
+
+.cover p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+.content {
+  padding: 3em;
+}
+
+@media (max-width: 500px) {
+  .content {
+    padding: 1em 1.5em 2em;
+    margin-left: -12px;
+  }
+}
+#bmb{
+    background-color: black;
+    position: relative;
+    top: -25px;
+    left: 30px;
+    border: 3px solid #609bc2;
+    text-decoration: none;
+    padding: 5px;
+    color:whitesmoke;
+    font-weight: bold;
+}
+.text-form {
+  width: 100%;
+}
+
+#survey-form label, #survey-form p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  color: #000;
+}
+
+#survey-form input, #survey-form textarea, #survey-form select {
+    display: block;
+    background-color: rgba(0,0,0, 0.1);
+  border-radius: 3px;
+  width: 40%;
+  padding: 8px 6px;
+  border: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 0;
+  box-shadow: 0px 0px 1px 2px #609bc2;
+}
+
+select {
+  width: 50% !important;
+}
+
+#submit {
+  display: block;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 2em;
+  background-color: #609bc2 !important;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0px 2px 1px 0px #1A70AE,
+              0px -2px 1px 0px #6FC0FA;
+}
+
+#submit:hover {
+  background-color: #1A70AE !important;
+  box-shadow: 0px 2px 1px 0px #075288,
+              0px -2px 1px 0px #269FF6;
+}
+
+#submit:active {
+  transform: scale(0.99);
+}
+
+.side-label {
+  display: inline !important;
+  font-size: 1em !important;
+}
+
+.space {
+  display: block;
+  margin-top: 1em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}    
+	</style>
+	
+	<body>
+		<div class="card">
+            <div class="cover">
+              <h1 id="title">Heart Stroke Predictor</h1>
+              <p id="description">Heart Stroke Predictor is an ML model which predicts whether there's a chance of getting a heart stroke or not. 
+          </p>
+            </div>
+            <div class="content">
+              <form action="/index" method="POST" id="survey-form">
+                <!-- NOME -->
+                <label for="gen" id="name-label">Gender</label>
+                <select id="dropdown" name="gen" class="text-form">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+                <br>
+                <label for="number" id="number-label">Age</label>
+                <input type="number" id="number" name="age" min="0" max="100" placeholder="Age" class="text-form">
+                <br>
+                
+                <label for="name" id="name-label">HyperTension</label>
+                <select id="dropdown" name="ht" class="text-form">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <br>
+                
+                <label for="name" id="name-label">Heart Disease</label>
+                <select id="dropdown" name="hd" class="text-form">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <br>
+                
+                <label for="name" id="name-label">Married</label>
+                <select id="dropdown" name="mar" class="text-form">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <br>
+                
+                <label for="name" id="name-label">Residence Type</label>
+                <select id="dropdown" name="rt" class="text-form">
+                    <option value="1">Urban</option>
+                    <option value="0">Rural</option>
+                </select>
+                <br>
+                
+                <label for="number" id="number-label">Glucose Level</label>
+                <input type="number" id="number" step=0.01 name="gl" placeholder="Avg Glucose Level" class="text-form">
+                <br>
+                
+                <label for="number" id="number-label">BMI Value</label>
+                <input type="number" id="number" step="0.01" name="bmi" placeholder="BMI Value" class="text-form">
+                <a id="bmb" href="/bmi" target="_blank" rel="noopener noreferrer">Calculate BMI</a>
+                <br>
+
+                <label for="name" id="name-label">Job Type</label>
+                <select id="dropdown" name="jt" class="text-form">
+                    <option value="gj">Government Job</option>
+                    <option value="nw">No Job</option>
+                    <option value="pr">Private Job</option>
+                    <option value="se">Self Employed</option>
+                    <option value="ch">Child</option>
+                </select>
+                <br>
+
+                <label for="name" id="name-label">Smoking Habit</label>
+                <select id="dropdown" name="sh" class="text-form">
+                    <option value="ssu">Unknown</option>
+                    <option value="sfs">Formerly Smoking</option>
+                    <option value="sns">Never Smoked</option>
+                    <option value="sss">Smoke Regularly</option>
+                    
+                </select>
+                <br>
+                <p style="color: green;">{{res}}</p>
+                 <span class="space"></span>
+                <input type="submit" id="submit">
+              </form>
+            </div>
+          </div>
+          
+          
+	</body>
+</html>
